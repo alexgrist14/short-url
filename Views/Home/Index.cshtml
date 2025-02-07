@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL Service</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="container">
+                <h1 class="title">Shorten Your URL</h1>
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input class="input" type="text" id="originalUrl" placeholder="Enter your URL here">
+                    </div>
+                    <div class="control">
+                        <button class="button is-info" onclick="shortenUrl()">Shorten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Original URL</th>
+                            <th>Shortened URL</th>
+                            <th>Created At</th>
+                            <th>Clicks</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="urlTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/site.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
