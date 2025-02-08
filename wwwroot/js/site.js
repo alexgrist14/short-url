@@ -37,7 +37,7 @@ const loadUrls = () => {
       data.forEach((url) => {
         const row = `<tr>
                       <td><a href="${url.originalUrl}" target="_blank">${url.originalUrl}</a></td>
-                      <td><a href="${API_URL}/${url.shortenedUrl}" target="_blank">${url.shortenedUrl}</a></td>
+                      <td><a href="${url.shortenedUrl}" target="_blank">${url.shortenedUrl}</a></td>
                       <td>${new Date(url.createdAt).toLocaleDateString()}</td>
                       <td>${url.clicks}</td>
                       <td><button class="button is-danger is-small" onclick="deleteUrl(${url.id})">Delete</button></td>

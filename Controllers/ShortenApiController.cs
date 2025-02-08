@@ -29,27 +29,11 @@ public class ShortenApiController : ControllerBase
 
         var shortCode = GenerateShortCode();
         var shortUrl = new ShortUrl { OriginalUrl = request.OriginalUrl, ShortenedUrl = shortCode };
-        
+
         _context.ShortUrls.Add(shortUrl);
         _context.SaveChanges();
 
         return Ok(shortUrl);
-    }
-
-    [HttpGet("{shortCode}")]
-    public IActionResult RedirectShortUrl(string shortCode)
-    {
-        Console.WriteLine("act");
-        var shortUrl = _context.ShortUrls.FirstOrDefault(s => s.ShortenedUrl == shortCode);
-        if (shortUrl == null)
-        {
-            return NotFound();
-        }
-
-        shortUrl.Clicks++;
-        _context.SaveChanges();
-
-        return Redirect(shortUrl.OriginalUrl);
     }
 
     [HttpDelete("{id}")]
